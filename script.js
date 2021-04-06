@@ -51,6 +51,7 @@ function calcularMovimientos(){
   document.getElementById('output').innerHTML = "¿Es posible el recorrido? : "+respuesta;
 }
 
+// Funcion recursiva para analizar el siguiente movimiento
 function movimientoRecursivo(i, j){
   if(meta(i,j)){
     respuesta="YES";

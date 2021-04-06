@@ -57,6 +57,7 @@ function movimientoRecursivo(i, j){
     return;
   }
 
+  // se muestra en consola la posicion actual y los movimientos realizados
   console.log("["+i+"]["+j+"] : "+mov);
 
   // Verificar Derecha
@@ -73,10 +74,13 @@ function movimientoRecursivo(i, j){
     movimientoRecursivo((i+1), j);
   }
 
+  // si no es posible recorrerse a ningun lado es porque hay un bloqueo.
   console.log("bloqueo");
   return;
 }
 
+// Verifica que la posicion se encuentre dentro de los limites
+// y devuelve true si la posicion es un '.'
 function verificarPosicion(y,x){
   if(y<0 || y>(n-1) || x<0 || x>(n-1) ) return false;
   
@@ -85,11 +89,14 @@ function verificarPosicion(y,x){
   else return false;
 }
 
+// Verificamos si la posicion concuerda con la meta
+// y si aun no pasa de los movimientos requeridos.
 function meta(i,j){
   if(i==(n-1) && j==(n-1) && mov<max )return true;
 }
 
-///
+
+////// Funcion principal que inicializa todo el programa.  //////
 function comenzar(){
   document.getElementById('strings').innerHTML = "";
   lineas = [];
